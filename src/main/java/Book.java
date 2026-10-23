@@ -1,5 +1,3 @@
-import javax.xml.namespace.QName;
-
 public class Book {
     // Properties
     private int id; // id
