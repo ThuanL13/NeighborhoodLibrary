@@ -1,3 +1,5 @@
+import javax.xml.namespace.QName;
+
 public class Book {
     // Properties
     private int id; // id
@@ -64,12 +66,12 @@ public class Book {
     }
     // Method used to check out
     public void checkOut(String name) {
-        isCheckedOut = false; // Book is checked out
-        checkedOutTo = name; // Stores name
+        setCheckedOut(true); // Book is checked out
+        setCheckedOutTo(name); // Stores name
     }
     public void checkIn() {
-        isCheckedOut = false; // Book is available for checkout
-        checkedOutTo = ""; // Removes name that was stored
+        setCheckedOut(false); // Book is available for checkout
+        setCheckedOutTo(""); // Removes name that was stored
     }
     @Override
     public String toString() {
