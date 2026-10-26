@@ -34,7 +34,7 @@ public class Main {
         do {
             System.out.println("\n===== Library Menu ======");
             System.out.println("1 - Show Available Books");
-            System.out.println("2- Show Checked Out Books");
+            System.out.println("2 - Show Checked Out Books");
             System.out.println("3 - Exit");
             System.out.print("Choose an option: ");
             int choice = read.nextInt();
@@ -111,8 +111,7 @@ public class Main {
         // Switch for choice
         switch (choice.toUpperCase()) {
             case "C" -> checkInBook(books);
-            case "X" -> {
-            }
+            case "X" -> System.out.println("Returning to main menu");
             // Invalid Choice
             default -> System.out.println("Invalid Choice");
         }
@@ -120,7 +119,7 @@ public class Main {
     // Check In Method
     public static void checkInBook(Book[] books) {
         // Asking for book ID
-        System.out.println("Enter Book ID ");
+        System.out.println("Enter Book ID: ");
         int id = read.nextInt();
         read.nextLine();
 
