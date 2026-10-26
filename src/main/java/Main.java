@@ -57,9 +57,9 @@ public class Main {
     public static void showAvailableBooks(Book[] books) {
         System.out.println("\n===== Available Books =====");
         // For each loop for books
-        for (Book book : books) {
+        for (Book book : books) { // Going through every book in books array
             // Showing only available books
-            if (!book.isCheckedOut()) {
+            if (!book.isCheckedOut()) { // If a book has not been checked out
                 System.out.printf(
                         "ID: %d | ISBN: %s | Title: %s%n",
                         book.getId(), book.getIsbn(), book.getTitle());
@@ -108,7 +108,7 @@ public class Main {
         System.out.println("\nC - Check In");
         System.out.println("X - Return To Home");
         String choice = read.nextLine();
-        // Switch for choice
+        // Switch for choice to check in
         switch (choice.toUpperCase()) {
             case "C" -> checkInBook(books);
             case "X" -> System.out.println("Returning to main menu");
@@ -125,7 +125,7 @@ public class Main {
 
         // Searching for books
         for (Book book : books) {
-            if (book.getId() == id && book.isCheckedOut()) {
+            if (book.getId() == id && book.isCheckedOut()) { // If book id matches the id entered AND is checked out
                 book.checkIn();
                 System.out.println("You've Checked In: " + book.getTitle());
                 return;
